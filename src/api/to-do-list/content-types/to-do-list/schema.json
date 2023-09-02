@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lists",
+  "info": {
+    "singularName": "to-do-list",
+    "pluralName": "lists",
+    "displayName": "To do list",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "to_do_lists"
+    },
+    "is_done": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
